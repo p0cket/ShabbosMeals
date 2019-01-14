@@ -7,6 +7,11 @@ export const getAllItems = () => {
   return fetch(url).then(resp => resp.json());
 }
 
+export const getMeal = mealID => {
+  const url = baseUrl + 'api/meals/' + mealID;
+  return fetch(url).then(resp => resp.json());
+}
+
 //--- deprecated
 // const baseUrl = 'http://jservice.io/';
 
