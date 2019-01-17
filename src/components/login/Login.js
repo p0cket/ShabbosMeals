@@ -3,7 +3,8 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import {shabbatTime} from '../../api/hebcal';
 //import Grid from 'material-ui/Grid';
-import {GridList, GridTile} from 'material-ui/GridList';
+import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
 
 
 
@@ -24,40 +25,49 @@ class Login extends React.Component {
 
   render() {
     const divStyle = {
-      margin: '40px',
+      margin: 'auto',
     };
 
     return(
       <div style={divStyle}>
-        <h1>Have Plans yet?</h1>
-        <h3> {"Candle Lighting is at " + this.state.shabTime}</h3>
-        <GridList cols={3}>
-          <GridTile
-            title="Have any plans"
-            alignContent="center"
-          >
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLFUge_HUrRpABEyHAcP240DY1QAmUG8z5vXTBrBgMxxI6Ovuc1Q" alt="" />
-          </GridTile>
-        </GridList>
-        <TextField
-          hintText="A really jewish name"
-          floatingLabelText="Name"
-        />
-        <br/>
-        <TextField
-          hintText="A really jewish neighborhood"
-          floatingLabelText="neighborhood"
-        />
-        <br/>
-        <TextField
-          hintText="A really jewish food"
-          floatingLabelText="favorite food"
-        />
-        <br/>
-        <RaisedButton
-          label="Continue"
-          primary={true}
-        />
+        <Grid container spacing={24} justify="center">
+          <Grid item>
+            <h1>Have Plans yet?</h1>
+            <h3> {"Candle Lighting is at " + this.state.shabTime}</h3>
+          </Grid>
+        </Grid>
+        <Grid container justify="center">
+          <Grid item>
+            <TextField
+              hintText="A really jewish name"
+              floatingLabelText="Name"
+            />
+          </Grid>
+        </Grid>
+        <Grid container justify="center">
+          <Grid item>
+            <TextField
+              hintText="A really jewish neighborhood"
+              floatingLabelText="neighborhood"
+            />
+          </Grid>
+        </Grid>
+        <Grid container justify="center">
+          <Grid item>
+            <TextField
+              hintText="A really jewish food"
+              floatingLabelText="favorite food"
+            />
+          </Grid>
+        </Grid>
+        <Grid container justify="center">
+          <Grid item>
+            <RaisedButton
+              label="Continue"
+              primary={true}
+            />
+          </Grid>
+        </Grid>
     </div>
     )
   }
